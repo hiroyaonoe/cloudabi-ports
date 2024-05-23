@@ -416,6 +416,7 @@ class HostBuilder(Builder):
         _chdir(cwd)
         subprocess.check_call([
             'env',
+            'FORCE_UNSAFE_CONFIGURE=1',
             'CC=' + self.get_cc(),
             'CXX=' + self.get_cxx(),
             'CFLAGS=' + ' '.join(self._cflags),
