@@ -7,10 +7,6 @@ import os
 
 # Architectures for which we can build packages.
 ARCHITECTURES = {
-    'aarch64-unknown-cloudabi',
-    'armv6-unknown-cloudabi-eabihf',
-    'armv7-unknown-cloudabi-eabihf',
-    'i686-unknown-cloudabi',
     'x86_64-unknown-cloudabi',
 }
 

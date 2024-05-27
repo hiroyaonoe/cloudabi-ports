@@ -24,14 +24,7 @@ log = logging.getLogger(__name__)
 DIR_ROOT = os.getcwd()
 DIR_DISTFILES = os.path.join(DIR_ROOT, '_obj/distfiles')
 DIR_INSTALL = os.path.join(DIR_ROOT, '_obj/install')
-DIR_PACKAGES_ARCHLINUX = os.path.join(DIR_ROOT, '_obj/packages/archlinux')
-DIR_PACKAGES_CYGWIN = os.path.join(DIR_ROOT, '_obj/packages/cygwin')
 DIR_PACKAGES_DEBIAN = os.path.join(DIR_ROOT, '_obj/packages/debian')
-DIR_PACKAGES_FREEBSD = os.path.join(DIR_ROOT, '_obj/packages/freebsd')
-DIR_PACKAGES_HOMEBREW = os.path.join(DIR_ROOT, '_obj/packages/homebrew')
-DIR_PACKAGES_NETBSD = os.path.join(DIR_ROOT, '_obj/packages/netbsd')
-DIR_PACKAGES_OPENBSD = os.path.join(DIR_ROOT, '_obj/packages/openbsd')
-DIR_PACKAGES_REDHAT = os.path.join(DIR_ROOT, '_obj/packages/redhat')
 DIR_REPOSITORY = os.path.join(DIR_ROOT, 'packages')
 
 # Parse all of the BUILD rules.
@@ -42,14 +35,7 @@ for filename in util.walk_files(DIR_REPOSITORY):
 target_packages = repo.get_target_packages()
 
 catalogs = {
-    ArchLinuxCatalog(None, DIR_PACKAGES_ARCHLINUX),
-    CygwinCatalog(None, DIR_PACKAGES_CYGWIN),
     DebianCatalog(None, DIR_PACKAGES_DEBIAN),
-    FreeBSDCatalog(None, DIR_PACKAGES_FREEBSD),
-    HomebrewCatalog(None, DIR_PACKAGES_HOMEBREW, 'http://example.com/'),
-    NetBSDCatalog(None, DIR_PACKAGES_NETBSD),
-    OpenBSDCatalog(None, DIR_PACKAGES_OPENBSD),
-    RedHatCatalog(None, DIR_PACKAGES_REDHAT),
 }
 
 
